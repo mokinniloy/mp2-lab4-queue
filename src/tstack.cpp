@@ -1,4 +1,4 @@
-#include "tstack.cpp"
+#include "tstack.h"
 #include <iostream>
 
 TStack::TStack(int Size) : TDataRoot(Size), top(-1) {}
@@ -35,7 +35,7 @@ TData TStack::Get()
 
 TData TStack::TopElem()
 {
-  if(TDataRoot::IsEmpty)
+  if(TDataRoot::IsEmpty())
     throw DataEmpty;
 
   return TDataRoot::pMem[top];
@@ -46,10 +46,10 @@ int TStack::IsValid()
   return 1;
 }
 
-void Print()
+void TStack::Print()
 {
   std::cout << "{ ";
   for(int i = 0; i < top; ++i)
-    cout << TDataRoot::pMem[i] << "; ";
+    std::cout << TDataRoot::pMem[i] << "; ";
   std::cout << '}';
 }
