@@ -3,11 +3,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <iterator>
-#include <iostream>
 #include <algorithm>
-
-using std::flush;
-using std::cout;
 
 TJobStream::TJobStream(float _q1) : q1(_q1)
 {
