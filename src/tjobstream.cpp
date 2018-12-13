@@ -1,6 +1,7 @@
 #include "tjobstream.h"
 
 #include <cstdlib>
+#include <ctime>
 
 TJobStream::TJobStream(float _q1) : q1(_q1)
 {
