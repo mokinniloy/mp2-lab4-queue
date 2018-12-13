@@ -3,7 +3,7 @@
 
 TStack::TStack(int Size) : TDataRoot(Size), top(-1) {}
 
-void TStack:: Put(const TData &Val)
+void TStack::Put(const TData &Val)
 {
   if(TDataRoot::IsFull())
     throw DataFull;

@@ -1,5 +1,7 @@
 #include "tqueue.h"
 
+#include <iostream>
+
 TQueue::TQueue(int Size) : TStack(Size), bottom(-1) {}
 
 void TQueue::Put(const TData &Val)
@@ -15,7 +17,7 @@ void TQueue::Put(const TData &Val)
   TDataRoot::pMem[TStack::top = _next_index(TStack::top)] = Val;
 }
 
-TData Get()
+TData TQueue::Get()
 {
   if(TDataRoot::IsEmpty())
     throw DataEmpty;
@@ -28,7 +30,12 @@ TData Get()
   return TDataRoot::pMem[bottom = _next_index(bottom)];
 }
 
-int _next_index(int ind)
+void TQueue::Print()
+{
+ std::cout << "queue";
+}
+
+int TQueue::_next_index(int ind)
 {
   return (ind + 1) % TDataRoot::MemSize;
 }
