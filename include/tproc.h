@@ -4,9 +4,10 @@
 class TProc
 {
 private:
-  
+  float q2;
+  float get_probability();
 public:
-  
+  TProc(float q2){}
 };
 
 #endif
