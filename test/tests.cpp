@@ -62,4 +62,3 @@ TEST(TQueue, get_value_from_begin)
 
   EXPECT_EQ(EL, qu.Get());
 }
-
