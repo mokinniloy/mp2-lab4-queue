@@ -16,6 +16,32 @@ TJobStream::TJobStream(float _q1) : q1(_q1)
   std::srand(std::time(nullptr));
 }
 
+int TJobStream::get_task()
+{
+  if(get_rand_probability() < q1)
+  {
+    int i = get_rand_index();
+    std::list<int>::iterator itr = tasks.begin();
+    std::next(itr, i);
+
+    int id = *itr;
+
+    tasks.erase(itr);
+
+    return id;
+  }
+
+  return JobStNoTask;
+}
+
+void TJobStream::complete_task(int id)
+{
+  if(std::find(tasks.begin(), tasks.end(), id) != tasks.end())
+    throw (-2);
+
+  tasks.push_back(id);
+}
+
 float TJobStream::get_rand_probability()
 {
   float r = (float)std::rand() / RAND_MAX;
@@ -26,27 +52,4 @@ int TJobStream::get_rand_index()
 {
   int ind = std::rand() % tasks.size();
   return ind;
-}
-
-int TJobStream::look_for_task()
-{
-  if(get_rand_probability() < q1)
-  {
-    int i = get_rand_index();
-    std::list<int>::iterator itr = tasks.begin();
-    std::next(itr, i);
-    int id = *itr;
-    tasks.erase(itr);
-    return id;
-  }
-
-  return -1;
-}
-
-void TJobStream::complete_task(int id)
-{
-  if(std::find(tasks.begin(), tasks.end(), id) != tasks.end())
-    throw (-2);
-
-  tasks.push_back(id);
 }

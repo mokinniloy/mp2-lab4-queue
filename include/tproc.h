@@ -3,6 +3,9 @@
 
 #include "tqueue.h"
 
+#define ProcBusy     -2
+#define ProcNotBusy  -1
+
 class TProc
 {
 private:
@@ -10,15 +13,12 @@ private:
   float q2;
   int n;
   int task_id;
-  float get_probability();
+  static float get_probability();
 public:
   TProc(float q2, int n);
   ~TProc(){delete task_queue;}
-  bool is_busy();
   int clock();
-  int get_task();
-  bool give_task(int id);
-  void handle_task(int id);
+  bool add_task(int id);
 };
 
 #endif
