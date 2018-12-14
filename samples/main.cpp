@@ -2,7 +2,6 @@
 #include "TProc.h"
 #include "TJobStream.h"
 #include <iostream>
-#include <conio.h>
 using namespace std;
 void TryOurProcessor(int tacts,int size_q, double q1,double q2)
 {
