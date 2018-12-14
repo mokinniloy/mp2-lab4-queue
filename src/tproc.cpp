@@ -13,7 +13,7 @@ TProc::TProc(float _q2, int _n) : q2(_q2), n(_n), task_id(ProcNotBusy)
   std::srand(std::random_device()());
 }
 
-int TProc::clock()
+int TProc::tact()
 {
   if(task_id == ProcNotBusy)         //если проц свободен, то берет задачу из очереди
   {

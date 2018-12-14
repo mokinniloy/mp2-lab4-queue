@@ -17,7 +17,7 @@ private:
 public:
   TProc(float q2, int n);
   ~TProc(){delete task_queue;}
-  int clock();
+  int tact();
   bool add_task(int id);
 };
 
