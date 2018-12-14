@@ -6,7 +6,7 @@
 TProc::TProc(float _q2, int _n) : q2(_q2), n(_n), task_id(ProcNotBusy)
 {
   if(_q2 > 1 || _q2 < 0 || _n < 1)
-    throw (-1);
+    throw ("TProc::TProc");
 
   task_queue = new TQueue(_n);
 
@@ -36,7 +36,7 @@ int TProc::clock()
 bool TProc::add_task(int id)
 {
   if(id < 0)
-    throw (-2);
+    throw ("TProc::add_task");
 
   if(task_queue->IsFull())  //если очередь переполнена
     return false;           //вернуть 0
@@ -47,5 +47,5 @@ bool TProc::add_task(int id)
 
 float TProc::get_probability()
 {
-  return (float)std::rand() / MAX_RAND;
+  return (float)std::rand() / RAND_MAX;
 }

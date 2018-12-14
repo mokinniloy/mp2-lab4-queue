@@ -4,13 +4,14 @@
 #include <ctime>
 #include <iterator>
 #include <algorithm>
+#include <iostream>
 
 TJobStream::TJobStream(float _q1) : q1(_q1)
 {
   if(_q1 < 0 || _q1 > 1)
-    throw (-1);
+    throw ("TJobStream::TJobStream");
 
-  for(int i = 0; i < 16; ++i)
+  for(int i = 0; i < 256; ++i)
     tasks.push_back(i);
 
   std::srand(std::time(nullptr));
@@ -37,7 +38,9 @@ int TJobStream::get_task()
 void TJobStream::complete_task(int id)
 {
   if(std::find(tasks.begin(), tasks.end(), id) != tasks.end())
-    throw (-2);
+  {
+    throw ("TJobStream::complete_task");
+  }
 
   tasks.push_back(id);
 }
