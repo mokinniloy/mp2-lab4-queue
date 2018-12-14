@@ -2,6 +2,7 @@
 #include "tproc.h"
 #include "tjobstream.h"
 #include "tqueue.h"
+#include <limits.h>
 using namespace std;
 
 int main()
