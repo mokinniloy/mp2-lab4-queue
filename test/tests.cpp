@@ -62,3 +62,39 @@ TEST(TQueue, get_value_from_begin)
 
   EXPECT_EQ(EL, qu.Get());
 }
+
+TEST(TQueue, IsEmpty_check)
+{
+  TQueue qu(5);
+
+  EXPECT_TRUE(qu.IsEmpty());
+}
+
+TEST(TQueue, IsFull_check)
+{
+  const int SZ = 5;
+  TQueue qu(SZ);
+
+  for(int i = 0; i < SZ; ++i)
+    qu.Put(1);
+
+  EXPECT_TRUE(qu.IsFull());
+}
+
+TEST(TQueue, IsFull_check_false)
+{
+  TQueue qu(5);
+
+  qu.Put(1);
+
+  EXPECT_FALSE(qu.IsFull());
+}
+
+TEST(TQueue, IsEmpty_check_false)
+{
+  TQueue qu(5);
+
+  qu.Put(1);
+
+  EXPECT_FALSE(qu.IsEmpty());
+}
