@@ -2,7 +2,6 @@
 #include "tjobstream.h"
 
 #include <iostream>
-#include <ctime>
 #include <cstdlib>
 #include <locale>
 
@@ -30,8 +29,6 @@ int main(int argc, const char *args[])
       return 0;
     break;
   }
-
-  
 
   return 0;
 }

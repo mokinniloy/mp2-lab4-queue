@@ -1,10 +1,9 @@
 #include "tjobstream.h"
 
 #include <cstdlib>
-#include <ctime>
 #include <iterator>
 #include <algorithm>
-#include <iostream>
+#include <random>
 
 TJobStream::TJobStream(float _q1) : q1(_q1)
 {
@@ -14,7 +13,7 @@ TJobStream::TJobStream(float _q1) : q1(_q1)
   for(int i = 0; i < 256; ++i)
     tasks.push_back(i);
 
-  std::srand(std::time(nullptr));
+  std::srand(std::random_device()());
 }
 
 int TJobStream::get_task()

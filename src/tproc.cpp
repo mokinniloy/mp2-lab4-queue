@@ -1,7 +1,7 @@
 #include "tproc.h"
 
 #include <cstdlib>
-#include <ctime>
+#include <random>
 
 TProc::TProc(float _q2, int _n) : q2(_q2), n(_n), task_id(ProcNotBusy)
 {
@@ -10,7 +10,7 @@ TProc::TProc(float _q2, int _n) : q2(_q2), n(_n), task_id(ProcNotBusy)
 
   task_queue = new TQueue(_n);
 
-  std::srand(time(nullptr));
+  std::srand(std::random_device()());
 }
 
 int TProc::clock()
