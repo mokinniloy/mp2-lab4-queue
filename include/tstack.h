@@ -1,9 +1,9 @@
 #include "tdataroot.h"
 
-class TStack :public TDataRoot
+class TStack : public TDataRoot
 {
 private:
-	int top; 
+	int top;
 public:
     TStack(int Size = DefMemSize);
     ~TStack() {};

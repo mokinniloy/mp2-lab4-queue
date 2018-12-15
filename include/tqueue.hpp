@@ -12,7 +12,4 @@ public:
     void Put(const TData& element);
     TData Get();
     int GetNextIndex(int& index);
-
-    int IsValid();
-    bool IsEmpty();
 };
