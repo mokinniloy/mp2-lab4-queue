@@ -1,5 +1,6 @@
 #include "tqueue.hpp"
 #include <stdexcept>
+#include <cstring>
 
 TQueue::TQueue(int size) : TStack(size)
 {
@@ -14,7 +15,7 @@ void TQueue::Put(const TData& element)
     }
     catch (const std::range_error& exception)
     {
-        if (exception.what() == (char*)"Stack is full" && DataCount != MemSize)
+        if (std::strncmp(exception.what(), (char*)"Stack if full", 13) && DataCount != MemSize)
         {
             GetNextIndex(top);
             TStack::Put(element);
