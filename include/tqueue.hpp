@@ -3,8 +3,7 @@
 class TQueue : public TStack
 {
 private:
-    int Hi;                             //верхний индекс
-    int Li;                             //нижний индекс
+    int Li;                             //начало очереди
 public:
     TQueue(int size = DefMemSize);
     ~TQueue() {};

@@ -2,7 +2,7 @@
 
 class TStack : public TDataRoot
 {
-private:
+protected:
 	int top;
 public:
     TStack(int Size = DefMemSize);

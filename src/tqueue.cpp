@@ -3,22 +3,23 @@
 
 TQueue::TQueue(int size) : TStack(size)
 {
-    Hi = -1;
     Li = 0;
 }
 
 void TQueue::Put(const TData& element)
 {
-    if (IsValid() < 0)
-        throw std::logic_error("No memory");
-
-    if (IsFull())
-        throw std::range_error("Queue is full");
-
-    pMem[GetNextIndex(Hi)] = element;
-    DataCount++;
-
-    SetRetCode(DataOK);
+    try
+    {
+        TStack::Put(element);
+    }
+    catch (const std::range_error& exception)
+    {
+        if (exception.what() == (char*)"Stack is full" && DataCount != MemSize)
+        {
+            GetNextIndex(top);
+            TStack::Put(element);
+        }
+    }
 }
 
 TData TQueue::Get()
@@ -27,17 +28,25 @@ TData TQueue::Get()
         throw std::logic_error("No memory");
 
     if (IsEmpty())
+    {
+        SetRetCode(DataEmpty);
         throw std::range_error("Queue is empty");
-
+    }
+    
     auto temp = pMem[Li];
-    pMem[GetNextIndex(Li)] = 0;
-    DataCount--;
+    if (Li == MemSize)
+    { 
+        pMem[Li] = 0;
+        GetNextIndex(Li);
+    }
+    else
+        pMem[Li++] = 0;
 
     return temp;
 }
 
 int TQueue::GetNextIndex(int& index)
 {
-    return ++index % MemSize;
+    return ++index % (MemSize + 1);
 }
 
