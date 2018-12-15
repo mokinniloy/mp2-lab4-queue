@@ -7,10 +7,11 @@ TEST (TQueue, ring_buffer_test)
 
     queue.Put(1);
     queue.Put(2);
-    queue.Get();
+    std::cout << queue.Get() << std::endl;
     queue.Put(3);
+    std::cout << queue.Get() << std::endl << queue.Get() << std::endl;
 
-    ASSERT_NO_THROW(queue.Print());
+    ASSERT_ANY_THROW(queue.Print());
 }
 
 

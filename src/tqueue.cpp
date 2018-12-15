@@ -42,6 +42,9 @@ TData TQueue::Get()
     else
         pMem[Li++] = 0;
 
+    SetRetCode(DataOK);
+    DataCount--;
+    
     return temp;
 }
 
