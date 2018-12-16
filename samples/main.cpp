@@ -3,7 +3,7 @@
 #include<ctime>
 #include"../include/tstatistic.h"
 using namespace std;
-void main()
+int main()
 {
 	srand(time(NULL));
 	cout << "Testing:" << endl;
@@ -11,5 +11,5 @@ void main()
 	int clockFrequencyMhz = 2000;
 	TJobStream task(0.5);
 	TStatistic::GetStatistic(amountOfClocksOfTest, clockFrequencyMhz, task, 8, 2);
-	system("pause");
+	return 0;
 }
