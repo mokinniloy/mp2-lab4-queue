@@ -33,13 +33,15 @@ protected:
 
   void SetMem(void *p, int Size);             // задание памяти
 public:
-  virtual ~TDataRoot();
   TDataRoot(int Size = DefMemSize);
-  virtual bool IsEmpty(void) const;           // контроль пустоты СД
-  virtual bool IsFull (void) const;           // контроль переполнения СД
+  virtual ~TDataRoot();
+
   virtual void  Put   (const TData &Val) = 0; // добавить значение
   virtual TData Get   (void)             = 0; // извлечь значение
 
+  virtual bool IsEmpty(void) const;           // контроль пустоты СД
+  virtual bool IsFull (void) const;           // контроль переполнения СД
+  
   // служебные методы
   virtual int  IsValid() = 0;                 // тестирование структуры
   virtual void Print()   = 0;                 // печать значений

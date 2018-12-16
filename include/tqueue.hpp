@@ -1,3 +1,4 @@
+#pragma once
 #include "tstack.h"
 
 class TQueue : public TStack
@@ -10,5 +11,6 @@ public:
 
     void Put(const TData& element);
     TData Get();
-    int GetNextIndex(int& index);
+
+    int GetNextIndex(int index);
 };
