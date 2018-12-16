@@ -18,10 +18,8 @@
 #define DataFull   -102  // СД переполнена
 #define DataNoMem  -103  // нет памяти
 
-//typedef int    TElem;    // тип элемента СД
 typedef TJobStream TElem; // тип элемента СД
 typedef TElem* PTElem;
-//typedef int    TData;    // тип значений в СД
 typedef TJobStream TData; // тип значений в СД
 
 enum TMemType { MEM_HOLDER, MEM_RENTER };

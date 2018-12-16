@@ -1,8 +1,7 @@
-#include <gtest.h>
 #include"tproc.h"
-#include"tstack.h"
 #include"tjobstream.h"
-#include"tqueue.h"
+#include <gtest/gtest.h>
+
 TEST(TProc, cant_create_proc_with_negative_or_zero_parameters)
 {
 	ASSERT_ANY_THROW(TProc(-4, -2, 0));
@@ -152,13 +151,6 @@ TEST(TQueue, put_throws_when_queue_is_full)
 	temp.Put(10);
 	temp.Put(12);
 	ASSERT_ANY_THROW(temp.Put(1));
-}
-TEST(TQueue, can_print_values)
-{
-	TQueue temp(3);
-	for (int i = 0; i < 3; i++)
-		temp.Put(i);
-	ASSERT_NO_THROW(temp.Print());
 }
 TEST(TQueue, can_detect_if_queue_is_valid)
 {
