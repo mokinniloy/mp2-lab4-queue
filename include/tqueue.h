@@ -13,6 +13,7 @@ public:
     TData Get();
     TData TopElem();
     void Print();
+    int GetSize() const;
 private:
     int GetNextIndex(int ind);
 };

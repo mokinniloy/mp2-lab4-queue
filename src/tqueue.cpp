@@ -3,7 +3,7 @@
 
 using namespace std;
 
-TQueue::TQueue(int Size)
+TQueue::TQueue(int Size):TStack(Size)
 {
     Li = -1;
 }
@@ -17,7 +17,8 @@ TData TQueue::Get()
         SetRetCode(DataEmpty);
     else
     {
-        tmp = pMem[++Li];
+        Li = GetNextIndex(Li);
+        tmp = pMem[Li];
         --DataCount;
     }
     return tmp;
@@ -57,4 +58,8 @@ int TQueue::GetNextIndex(int ind)
     return ++ind%MemSize;
 }
 
+int TQueue::GetSize() const
+{
+    return DataCount;
+}
 
