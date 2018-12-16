@@ -53,12 +53,12 @@ int main()
     UnprocessedTasks = q.GetSize();
     if(!proc.IsEmpty())
         ++UnprocessedTasks;
-    cout<<"Number of tacts: "<<Tact<<"\n";
+    //cout<<"Number of tacts: "<<Tact<<"\n";
     cout<<"Number of tasks: "<<NumTasks<<"\n";
-    cout<<"Number of unprocessed tasks: "<<UnprocessedTasks<<"\n";
-    cout<<"Number of complete tasks: "<<NumComplete<<"\n";
-    cout<<"Number of rejections: "<<NumRejections<<"\n";
+    //cout<<"Number of unprocessed tasks: "<<UnprocessedTasks<<"\n";
+    //cout<<"Number of complete tasks: "<<NumComplete<<"\n";
+    cout<<"Number of rejections: "<<double(NumRejections)*100/double(NumTasks)<<"%\n";
     cout<<"Medium time on one task: "<<double(Tact-NumEmpty)/double(NumComplete)<<"\n";
-    cout<<"Number of idle tacts: "<<NumEmpty<<"\n";
+    cout<<"Number of idle tacts: "<<double(NumEmpty)*100/double(Tact)<<"%\n";
     return 0;
 }
