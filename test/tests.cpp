@@ -1,6 +1,6 @@
 #include"tproc.h"
 #include"tjobstream.h"
-#include <gtest/gtest.h>
+#include <gtest.h>
 
 TEST(TProc, cant_create_proc_with_negative_or_zero_parameters)
 {
