@@ -10,7 +10,7 @@ class TProc {
     std::uniform_real_distribution<double> rand;
     bool Empty;
 public:
-    TProc();
+    TProc(double _q2);
     bool IsComplete();
     bool IsEmpty();
     bool IsReady();

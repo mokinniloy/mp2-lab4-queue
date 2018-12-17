@@ -7,11 +7,12 @@ using namespace std;
 
 int main()
 {
-    TJobStream task;
-    TProc proc;
-    int NumTasks = 0, NumComplete = 0, NumRejections = 0, MediumTime = 0, NumEmpty = 0, UnprocessedTasks = 0;
-    int Tact = 1000000;
+    double q1 = 0.50, q2 = 0.50;
+    int Tact = 100000;
     int QSize = 10;
+    TJobStream task(q1);
+    TProc proc(q2);
+    int NumTasks = 0, NumComplete = 0, NumRejections = 0, MediumTime = 0, NumEmpty = 0, UnprocessedTasks = 0;
     TQueue q(QSize);
     for(int i = 0; i < Tact; i++)
     {

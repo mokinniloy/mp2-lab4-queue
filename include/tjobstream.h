@@ -11,7 +11,7 @@ class TJobStream
     std::mt19937 mt;
     std::uniform_real_distribution<double> rand;
 public:
-    TJobStream();
+    TJobStream(double _q1);
     bool IsTask();
     int GetTask();
 };
