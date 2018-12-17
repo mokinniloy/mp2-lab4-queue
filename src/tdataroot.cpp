@@ -29,7 +29,6 @@ TDataRoot::~TDataRoot()
 {
   if (MemType == MEM_HOLDER)
     delete [] pMem;
-  pMem = nullptr];
 } /*-------------------------------------------------------------------------*/
 
 void TDataRoot::SetMem(void *p, int Size) // задание памяти
