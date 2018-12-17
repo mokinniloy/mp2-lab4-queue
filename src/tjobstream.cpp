@@ -1,9 +1,7 @@
 #include "tjobstream.h"
 
-#include <cstdlib>
 #include <iterator>
 #include <algorithm>
-#include <random>
 
 TJobStream::TJobStream(float _q1) : q1(_q1)
 {
@@ -13,7 +11,7 @@ TJobStream::TJobStream(float _q1) : q1(_q1)
   for(int i = 0; i < 256; ++i)
     tasks.push_back(i);
 
-  std::srand(std::random_device()());
+  rng = std::mt19937(std::random_device()());
 }
 
 int TJobStream::get_task()
@@ -46,12 +44,13 @@ void TJobStream::complete_task(int id)
 
 float TJobStream::get_rand_probability()
 {
-  float r = (float)std::rand() / RAND_MAX;
-  return r;
+  return dist_0_1(rng);
 }
 
 int TJobStream::get_rand_index()
 {
-  int ind = std::rand() % tasks.size();
-  return ind;
+  std::uniform_int_distribution<int> dst(0, tasks.size());
+  return dst(rng);
 }
+
+std::uniform_real_distribution<float> TJobStream::dist_0_1 = std::uniform_real_distribution<float>(0.0f, 1.0f);

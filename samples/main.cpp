@@ -3,7 +3,6 @@
 
 #include <iostream>
 #include <iomanip>
-#include <cstdlib>
 #include <locale>
 
 using namespace std;
@@ -15,7 +14,7 @@ int main(int argc, const char *args[])
   float q1 = 0.5, q2 = 0.5;
   int n = 10;
   size_t tacts = 10;
-  
+
   switch(argc)
   {
     case 5:
