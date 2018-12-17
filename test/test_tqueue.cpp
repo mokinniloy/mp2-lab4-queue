@@ -1,4 +1,4 @@
-#include <gtest/gtest.h>
+#include <gtest.h>
 #include "tqueue.h"
 
 TEST(TQueue, can_create_with_positive_size)
