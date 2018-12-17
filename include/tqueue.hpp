@@ -4,13 +4,13 @@
 class TQueue : public TStack
 {
 private:
-    int Li;                             //начало очереди
+	int Li;                             //начало очереди
 public:
-    TQueue(int size = DefMemSize);
-    ~TQueue() {};
+	TQueue(int size = DefMemSize);
+	~TQueue() {};
 
-    void Put(const TData& element);
-    TData Get();
+	void Put(const TData& element);
+	TData Get();
 
-    int GetNextIndex(int index);
+	int GetNextIndex(int index);
 };

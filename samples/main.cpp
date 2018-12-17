@@ -3,16 +3,16 @@
 
 int main()
 {
-    TSystem simulation;
-    int clockCount, queueSize;
-    double cpuTreshold;
-    double taskTreshold;
+	TSystem simulation;
+	int clockCount, queueSize;
+	double cpuTreshold;
+	double taskTreshold;
 
-    std::cout << "\t CPU Simulation testing. Input technical system info: " << std::endl;
-    std::cin >> clockCount >> queueSize >> cpuTreshold >> taskTreshold;
+	std::cout << "\t CPU Simulation testing. Input technical system info: " << std::endl;
+	std::cin >> clockCount >> queueSize >> cpuTreshold >> taskTreshold;
 
-    simulation.simulate(clockCount, queueSize, cpuTreshold, taskTreshold);
-    simulation.printResults();
+	simulation.simulate(clockCount, queueSize, cpuTreshold, taskTreshold);
+	simulation.printResults();
 
-    exit(0);
+	exit(0);
 }

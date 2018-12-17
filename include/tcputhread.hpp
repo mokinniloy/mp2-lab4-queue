@@ -7,18 +7,18 @@
 class TCpuThread
 {
 private:
-    std::mt19937 generator;
-    std::uniform_real_distribution<double> range;
+	std::default_random_engine generator;
+	std::uniform_real_distribution<double> range;
 
-    double tresholdValue;
-    int currentState;
+	double tresholdValue;
+	int currentState;
 public:
-    TCpuThread();
-    TCpuThread(double treshold);
-    ~TCpuThread() {};
+	TCpuThread() { range = std::uniform_real_distribution<double>(0.0, 1.0); }
+	TCpuThread(double treshold);
+	~TCpuThread() {}
 
-    int tick();
+	int tick() { return range(generator) < tresholdValue; }
 
-    bool GetState();
-    void SetState(bool state);
+	bool GetState() { return currentState; }
+	void SetState(bool state) { currentState = state; }
 };

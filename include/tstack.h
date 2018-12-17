@@ -5,9 +5,10 @@ class TStack : public TDataRoot
 {
 protected:
 	int top;
+
 public:
-    TStack(int Size = DefMemSize);
-    ~TStack() {};
+	TStack(int Size = DefMemSize);
+	~TStack() {}
 
 	void Put(const TData &Val);
 	TData Get();
@@ -15,5 +16,5 @@ public:
 	virtual TData TopElem();
 
 	int IsValid();
-    void Print();
+	void Print();
 };

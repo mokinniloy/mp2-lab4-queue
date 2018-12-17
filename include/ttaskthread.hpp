@@ -4,15 +4,15 @@
 class TTaskThread
 {
 private:
-    std::mt19937 generator;
-    std::uniform_real_distribution<double> range;
+	std::default_random_engine generator;
+	std::uniform_real_distribution<double> range;
 
-    int taskID;
-    double tresholdValue;
+	int taskID;
+	double tresholdValue;
 public:
-    TTaskThread();
-    TTaskThread(double treshold);
-    ~TTaskThread() {};
+	TTaskThread() { range = std::uniform_real_distribution<double>(0.0, 1.0); }
+	TTaskThread(double treshold);
+	~TTaskThread() {}
 
-    int tick();
+	int tick() { return (range(generator) < tresholdValue) ? ++taskID : 0; }
 };

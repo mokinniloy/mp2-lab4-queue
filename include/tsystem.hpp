@@ -6,17 +6,17 @@
 class TSystem
 {
 private:
-    TQueue cpuQueue;
-    TTaskThread taskThread;
-    TCpuThread cpu;
+	int skippedTasks, completedTasks, taskCount;
+	int idleClocks, busyClocks, clockCount;
+	double cpuTreshold, taskTreshold;
 
-    int skippedTasks, completedTasks, taskCount;
-    int idleClocks, busyClocks, clockCount;
-    double cpuTreshold, taskTreshold;
+	TQueue cpuQueue;
+	TTaskThread taskThread;
+	TCpuThread cpu;
 public:
-    TSystem();
-    ~TSystem() {};
+	TSystem();
+	~TSystem() {};
 
-    void simulate(int totalClocks, int queueSize, double cpuTshold, double taskTshold);
-    void printResults();
+	void simulate(int totalClocks, int queueSize, double cpuTshold, double taskTshold);
+	void printResults();
 };
