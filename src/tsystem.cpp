@@ -68,11 +68,11 @@ void TSystem::printResults()
 {
 	std::cout << "Clock count: " << clockCount << std::endl;
 	std::cout << "Busy clocks: " << busyClocks << std::endl;
-	std::cout << "Idle clocks: " << idleClocks << /*"\033[93m*/"(" << (double)idleClocks / (double)clockCount * 100 << "%)"/*\033[0m"*/ << std::endl;
+	std::cout << "Idle clocks: " << idleClocks << "\033[91m(" << (double)idleClocks / (double)clockCount * 100 << "%)\033[0m" << std::endl;
 
 	std::cout << "Task count: " << taskCount << std::endl;
 	std::cout << "Completed tasks: " << completedTasks << std::endl;
-	std::cout << "Skipped tasks: " << skippedTasks << /*"\033[93m*/"(" << (double)skippedTasks / (double)taskCount * 100 << "%)"/*\033[0m"*/ << std::endl;
+	std::cout << "Skipped tasks: " << skippedTasks << "\033[91m(" << (double)skippedTasks / (double)taskCount * 100 << "%)\033[0m" << std::endl;
 
 	std::cout << "Av. clocks/task: " << (double)busyClocks / completedTasks << std::endl;
 }
