@@ -67,9 +67,9 @@ TEST(TQueue, can_get_top_element_without_deleting)
 	EXPECT_EQ(q.Get(), 123);
 }
 
-TEST(TQueue, can_create_queue_without_expected_size)
+TEST(TQueue, can_create_queue_with_zero_size)
 {
-	ASSERT_NO_THROW(TQueue q());
+	ASSERT_NO_THROW(TQueue q(0));
 }
 
 TEST(TQueue, cant_get_top_element_without_deleting_if_empty)
