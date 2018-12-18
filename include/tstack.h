@@ -1,16 +1,17 @@
 #include "tdataroot.h"
 
-class TStack :public TDataRoot
+class TStack : public TDataRoot
 {
-private:
-	int top; 
+protected:
+	int Hi;
+	virtual int GetNextIndex(int index);
 public:
-    TStack(int Size = DefMemSize);
-    ~TStack() {};
-	void Put(const TData &Val); 
-	TData Get();
-	virtual TData TopElem(); 
+	TStack(int Size = DefMemSize);
+	~TStack() {};
+	virtual void Put(const TData &Val);
+	virtual TData Get();
+	virtual TData TopElem();
 
 	int IsValid();
-    void Print();
+	void Print();
 };
