@@ -9,7 +9,8 @@ int main()
 	cout << "Testing:" << endl;
 	int amountOfClocksOfTest = 1000000;
 	int clockFrequencyMhz = 2000;
-	TJobStream task(0.5);
+	TJobStream task(0.5,1);
 	TStatistic::GetStatistic(amountOfClocksOfTest, clockFrequencyMhz, task, 8, 2);
+	system("pause");
 	return 0;
 }

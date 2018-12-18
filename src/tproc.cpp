@@ -32,7 +32,8 @@ void TProc::DoClock(TJobStream& b)
 {
 	int cyclesOfDoTask = clockFrequency / 100;
 	for (int i = 0; i < intensivityInOut; i++)
-		AddTask(b);
+		if (b.GenerateAddTask())
+			AddTask(b);
 	for (int i = 0; i < cyclesOfDoTask; i++)
 		DoTask(b);
 	for (int i = 0; (i < intensivityInOut) && (!queueOut->IsEmpty()); i++)
@@ -87,7 +88,8 @@ int TProc::CycleOnTask(TJobStream & b)
 		amountOfClocks++;
 		if (b.GenerateTask())
 			return clocks;
-		AddTask(b);
+		if (b.GenerateAddTask())
+			AddTask(b);
 		if (!queueOut->IsEmpty())
 			queueOut->Get();
 	}

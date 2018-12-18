@@ -8,7 +8,7 @@ TEST(TProc, cant_create_proc_with_negative_or_zero_parameters)
 }
 TEST(TJobStream, cant_create_job_with_negative_or_zero_probability)
 {
-	ASSERT_ANY_THROW(TJobStream(0));
+	ASSERT_ANY_THROW(TJobStream(0,0));
 }
 TEST(TProc, can_create_proc_with_positie_parameters)
 {
@@ -16,7 +16,7 @@ TEST(TProc, can_create_proc_with_positie_parameters)
 }
 TEST(TJobStream, can_create_job_with_positive_probability_and_less_or_eq_one)
 {
-	ASSERT_NO_THROW(TJobStream(0.5));
+	ASSERT_NO_THROW(TJobStream(0.5,0.5));
 }
 TEST(TStack, can_create_stack_with_positive_length)
 {

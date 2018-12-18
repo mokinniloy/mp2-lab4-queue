@@ -6,19 +6,22 @@ TJobStream::TJobStream()
 {
 	probEndTask = 0.5;
 	cyclesOnTask = 0;
+	probAddTask = 0.5;
 }
 
 TJobStream::TJobStream(const TJobStream & b)
 {
 	probEndTask = b.probEndTask;
+	probAddTask = b.probAddTask;
 	cyclesOnTask = b.cyclesOnTask;
 }
 
-TJobStream::TJobStream(double probability)
+TJobStream::TJobStream(double probabilityEnd, double probabilityAdd)
 {
-	if (probability <= 0 || probability > 1)
+	if (probabilityEnd <= 0 || probabilityEnd > 1 || probabilityAdd>1||probabilityAdd<=0)
 		throw "Wrong probability";
-	probEndTask = probability;
+	probEndTask = probabilityEnd;
+	probAddTask = probabilityAdd;
 	cyclesOnTask = 0;
 }
 
@@ -29,6 +32,14 @@ bool TJobStream::GenerateTask()
 	else
 		return false;
 
+}
+
+bool TJobStream::GenerateAddTask()
+{
+	if ((((std::rand() % 10) + 1) / 10.0) <= probAddTask) //генерируется число от 0.1 до 1
+		return true;
+	else
+		return false;
 }
 
 TJobStream & TJobStream::operator=(const TJobStream & b)
