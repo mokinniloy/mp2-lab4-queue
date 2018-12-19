@@ -2,8 +2,11 @@
 
 class TStack :public TDataRoot
 {
-private:
-	int top; 
+
+protected:
+//	virtual int GetNextIndex(int index);
+	int top;
+	virtual int GetNextIndex(int index);
 public:
     TStack(int Size = DefMemSize);
     ~TStack() {};
