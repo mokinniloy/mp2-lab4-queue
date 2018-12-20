@@ -1,8 +1,5 @@
 #include "tproc.h"
 
-#include <cstdlib>
-#include <random>
-
 TProc::TProc(float _q2, int _n) : q2(_q2), n(_n), task_id(ProcNotBusy)
 {
   if(_q2 > 1 || _q2 < 0 || _n < 1)
@@ -10,7 +7,7 @@ TProc::TProc(float _q2, int _n) : q2(_q2), n(_n), task_id(ProcNotBusy)
 
   task_queue = new TQueue(_n);
 
-  std::srand(std::random_device()());
+  rng = std::mt19937(std::random_device()());
 }
 
 int TProc::tact()
@@ -22,7 +19,7 @@ int TProc::tact()
     else
       task_id = task_queue->Get();
   }
-  
+
   if(get_probability() < q2)         //если выполнил программу
   {
     int tmp = task_id;
@@ -47,5 +44,7 @@ bool TProc::add_task(int id)
 
 float TProc::get_probability()
 {
-  return (float)std::rand() / RAND_MAX;
+  return dist_0_1(rng);
 }
+
+std::uniform_real_distribution<float> TProc::dist_0_1 = std::move(std::uniform_real_distribution<float>(0, 1));

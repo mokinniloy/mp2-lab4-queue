@@ -1,20 +1,20 @@
 #ifndef __JOBSTREAM_H__
 #define __JOBSTREAM_H__
 
-//#include<cstdlib>
-//#include <vector>
 #include <list>
-//#include "tqueue.h"
+#include <random>
 
 #define JobStNoTask -1
 
 class TJobStream
 {
 private:
+  std::mt19937 rng;
   float q1;
   std::list<int> tasks;
-  static float get_rand_probability();
+  float get_rand_probability();
   int get_rand_index();
+  static std::uniform_real_distribution<float> dist_0_1;
 public:
   TJobStream(float q1);
   int get_task();
