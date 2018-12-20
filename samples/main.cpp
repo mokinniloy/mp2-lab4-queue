@@ -1,4 +1,4 @@
-#include "TQueue.h"
+#include "tqueue.h"
 #include "TProc.h"
 #include <ctime>
 using namespace std;
