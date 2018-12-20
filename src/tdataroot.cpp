@@ -9,21 +9,27 @@
 #include <stdio.h>
 #include "tdataroot.h"
 
-TDataRoot::TDataRoot(int Size): TDataCom()
+TDataRoot::TDataRoot(int Size)
 {
-  DataCount = 0;
-  MemSize = Size;
-  if (Size == 0) // память будет установлена методом SetMem
-  {
-    pMem = NULL;
-    MemType = MEM_RENTER;
-  }
-  else // память выделяется объектом
-  {
-    pMem = new TElem[MemSize];
-    MemType = MEM_HOLDER;
-  }
-} /*-------------------------------------------------------------------------*/
+	if (Size < 0)
+	{
+		SetRetCode(DataErr);
+		return;
+	}
+	MemSize = Size;
+	DataCount = 0;
+	if (MemSize == 0)
+	{
+		MemType = MEM_RENTER;
+		pMem = NULL;
+	}
+	else
+	{
+		MemType = MEM_HOLDER;
+		pMem = new TData[MemSize];
+	}
+	SetRetCode(DataOK);
+}
 
 TDataRoot::~TDataRoot()
 {
