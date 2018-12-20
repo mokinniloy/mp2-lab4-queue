@@ -8,7 +8,6 @@ private:
 public:
 	TProc(double Rate);
 	int IsProcBusy(void);
-	//int RunNewJob(int JobId);
 	double GetQ2();
 };
 
