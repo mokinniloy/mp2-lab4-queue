@@ -11,7 +11,6 @@ public:
 	void Put(const int &Val);
 	TData Get();
 	virtual TData TopElem(); 
-
 	int IsValid();
-    void Print();
+        void Print();
 };
