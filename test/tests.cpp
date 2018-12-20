@@ -91,3 +91,46 @@ TEST(TQueue, get_next_index_2)
 	TQueue q(3);
 	EXPECT_EQ(0, q.GetNextIndex(2));
 }
+
+TEST(TQueue, is_empty)
+{
+	TQueue q(1);
+	int res = -1;
+	res = q.IsEmpty();
+	EXPECT_EQ(1, res);
+}
+
+TEST(TQueue, top_elem)
+{
+	TQueue q(3);
+	q.Put(5);
+	q.Put(5);
+	q.Put(5);
+	q.Get();
+	q.Put(6);
+	EXPECT_EQ(6, q.TopElem());
+}
+
+TEST(TQueue, top_elem_2)
+{
+	TQueue q(3);
+	q.Put(5);
+	EXPECT_EQ(5, q.TopElem());
+}
+
+TEST(TQueue, top_elem_3)
+{
+	TQueue q(0);
+	ASSERT_ANY_THROW(q.TopElem());
+}
+
+TEST(TQueue, print_queue)
+{
+	TQueue q(3);
+	q.Put(1);
+	q.Put(2);
+	q.Put(3);
+	ASSERT_NO_THROW(q.Print());
+}
+
+

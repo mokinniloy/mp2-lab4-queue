@@ -4,12 +4,12 @@
 class TQueue : public TStack
 {
 private:
-	int Hi, Li; // Li - index of first element. Hi - index of last element
+	int Li, Hi; // Li - index of first element. Hi - index of last element (Get - Li; Put - Hi)
 public:
-	TQueue(int Size = MaxMemSize);
-	TQueue(const TQueue &q);
-	~TQueue() {};
-	void Put(const TData &Val);
-	TData Get();
+	TQueue(int Size = MaxMemSize) : TStack(Size) { Li = 0; Hi = 0; };
 	int GetNextIndex(int index)const;
+	TData Get(); //we must to override inhereted Get() method for queue class
+	void Put(const TData &val);
+	TData TopElem();
+	void Print();
 };
