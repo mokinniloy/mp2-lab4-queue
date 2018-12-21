@@ -1,4 +1,3 @@
-#include <Windows.h>
 #include <ctime>
 #include <iostream>
 #include <cstdlib>
@@ -78,6 +77,6 @@ int main()
 	cout << "persent of denied tasks		 : " << countOfDenied * 100 / tasks.getTaskNum() << "%" << endl;
 
 	cout << "\n\n----------------------------------------------\n\n";
-	system("pause");
+
 }
 
