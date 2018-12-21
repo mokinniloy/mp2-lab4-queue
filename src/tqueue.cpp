@@ -1,4 +1,3 @@
-#pragma once
 #include "tqueue.h"
 
 TQueue::TQueue(int size) : TStack(size)

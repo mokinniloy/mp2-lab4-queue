@@ -1,4 +1,3 @@
-#pragma once
 #include "tstack.h"
 #include <stdexcept>
 #include <iostream>
