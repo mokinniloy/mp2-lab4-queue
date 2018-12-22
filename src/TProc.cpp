@@ -1,4 +1,4 @@
-#include "tproc.h"
+#include "TProc.h"
 #include <iostream>
 
 using namespace std;

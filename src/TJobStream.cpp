@@ -1,4 +1,4 @@
-#include "tjobstream.h"
+#include "TJobstream.h"
 #include <iostream>
 
 using namespace std;
