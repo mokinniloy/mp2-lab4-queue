@@ -3,12 +3,12 @@
 
 TQueue::TQueue(int s): TStack(s)
 {
-	first = 0;   // or 0 ?????
+	first = 0;
 }
 
 int TQueue::GetNextIndex(int ind)
 {
-	return ind++ % MemSize;
+	return ++ind % MemSize;
 }
 
 TData TQueue::Get() 
@@ -21,13 +21,11 @@ TData TQueue::Get()
 	{
 		SetRetCode(DataEmpty);
 	}
-	else {
+	else {//?????????????????????
 		DataCount--;
-		return pMem[GetNextIndex(first--)];
+		int t = first;
+		first = GetNextIndex(first);
+		//first = GetNextIndex(first);
+		return pMem[t];
 	}
-}
-
-void TQueue::Print() 
-{
-
 }

@@ -4,9 +4,10 @@ class TQueue: public TStack
 {
 private:
 	int first;
-
+	int GetNextIndex(int ind);
 public:
-	TQueue(int s = 5);
-
+	TQueue(int s = DefMemSize);
+	~TQueue() {};
 	TData Get();
+	
 };

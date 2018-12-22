@@ -6,6 +6,11 @@ TStack::TStack(int Size) :TDataRoot(Size)
 	top = 0;
 }
 
+int TStack::GetNextIndex(int ind)
+{
+	return ++ind;
+}
+
 void TStack::Put(const TData &Val) 
 {
 	if (pMem == nullptr)
@@ -18,7 +23,8 @@ void TStack::Put(const TData &Val)
 	}
 	else
 	{
-		pMem[top++%MemSize] = Val;
+		pMem[top] = Val;
+		top = GetNextIndex(top);
 		DataCount++;
 	}
 }
