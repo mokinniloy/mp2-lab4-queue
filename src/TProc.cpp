@@ -1,5 +1,5 @@
-//#include "TProc.h"
-#include "C:\Users\1\Documents\Visual Studio 2015\Projects\mp2-lab4-queue\include\TProc.h"
+#include "TProc.h"
+//#include "C:\Users\1\Documents\Visual Studio 2015\Projects\mp2-lab4-queue\include\TProc.h"
 
 TProc::TProc(double _q2, int _SizeOfQueue): ProcessorExpectationQueue(_SizeOfQueue)
 {

@@ -8,8 +8,8 @@
 
 #include <stdio.h>
 #include <iostream>
-//#include "tdataroot.h"
-#include "C:\Users\1\Documents\Visual Studio 2015\Projects\mp2-lab4-queue\include\tdataroot.h"
+#include "tdataroot.h"
+//#include "C:\Users\1\Documents\Visual Studio 2015\Projects\mp2-lab4-queue\include\tdataroot.h"
 using namespace std;
 
 TDataRoot::TDataRoot(int Size): TDataCom()
