@@ -66,7 +66,7 @@ int main()
 	cout << "tacts free			 : " << tacts.GetCountOfFreeTacts() << endl;
 	cout << "persent of tacts free		 : " << (tacts.GetCountOfFreeTacts() * 100 /
 		(tacts.GetCountOfWorkTacts() + tacts.GetCountOfFreeTacts()))<< "%" << endl;
-	cout << "average count of tasks execution : " << (tacts.GetCountOfWorkTacts() + tacts.GetCountOfFreeTacts())
+	cout << "average count of tasks execution : " << tacts.GetCountOfWorkTacts()
 		/(countOfAccept) << endl;
 
 	cout << "\n\n----------------------------------------------\n\n";
