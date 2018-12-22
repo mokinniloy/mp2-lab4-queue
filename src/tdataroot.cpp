@@ -7,8 +7,10 @@
 //   память выделяется динамически или задается методом SetMem
 
 #include <stdio.h>
+#include <iostream>
 //#include "tdataroot.h"
 #include "C:\Users\1\Documents\Visual Studio 2015\Projects\mp2-lab4-queue\include\tdataroot.h"
+using namespace std;
 
 TDataRoot::TDataRoot(int Size): TDataCom()
 {
@@ -28,8 +30,10 @@ TDataRoot::TDataRoot(int Size): TDataCom()
 
 TDataRoot::~TDataRoot()
 {
+	cout << "Destructor TDataRoot" << endl;
   if (MemType == MEM_HOLDER)
     delete [] pMem;
+  
   pMem = NULL;
 } /*-------------------------------------------------------------------------*/
 
