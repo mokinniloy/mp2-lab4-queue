@@ -5,13 +5,13 @@
 
 using namespace std;
 
-    TStack::TStack(int Size)
+    TStack::TStack(int Size): TDataRoot(Size)
     {
         if (Size < 0)
             throw "negative size of stack";
-        DataCount = 0;
-        MemSize = Size;
-        pMem = new TElem[MemSize];
+        //DataCount = 0;
+        //MemSize = Size;
+        //pMem = new TElem[MemSize];
         top = -1; // stack is empty
     }
 

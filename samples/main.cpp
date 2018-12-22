@@ -17,6 +17,7 @@ double GetRandomValue() // return random double value between 0...1
 
 void Simulate(double _q1, double _q2, int _SizeOfQueue, int _clocks)
 {
+	cout << "Begin sim " << endl;
 	TProc processor(_q1, _SizeOfQueue);
 	TJobStream jobstream(_q2);
 
@@ -50,7 +51,7 @@ void Simulate(double _q1, double _q2, int _SizeOfQueue, int _clocks)
 		}
 
 	}
-
+	cout << "ended loop" << endl;
 
 	cout << "=====Results=====" << endl;
 	cout << "Initial parameters of simulation: " << endl;
