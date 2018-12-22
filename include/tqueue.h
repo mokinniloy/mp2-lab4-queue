@@ -1,5 +1,6 @@
 #ifndef __TQUEUE_H__
 #define __TQUEUE_H__
+#pragma once
 
 #include "tstack.h"
 
