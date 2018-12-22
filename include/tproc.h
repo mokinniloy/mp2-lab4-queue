@@ -1,7 +1,7 @@
 #pragma once
 #include "tdataroot.h"
 #include "tqueue.h"
-#include "TJobStream.h"
+#include "tjobstream.h"
 
 class TProc
 {
