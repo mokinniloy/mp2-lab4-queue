@@ -3,8 +3,8 @@
 #include <cstdlib>
 #include "tstack.h"
 #include "tqueue.h"
-#include "TJobStream.h"
-#include "TProc.h"
+#include "tjobstream.h"
+#include "tproc.h"
 
 using namespace std;
 
@@ -71,8 +71,7 @@ int main()
 	cout << "Свободных тактов: " << tacts.GetCountOfFreeTacts() << endl;
 	cout << "Без тактов: " << (tacts.GetCountOfFreeTacts() * 100 /
 		(tacts.GetCountOfWorkTacts() + tacts.GetCountOfFreeTacts()))<< "%" << endl;
-	cout << "Среднее кол-во тактов выполненных задач: " << (tacts.GetCountOfWorkTacts() + tacts.GetCountOfFreeTacts())
-		/(countOfAccept) << endl;
+	cout << "Среднее кол-во тактов выполненных задач: " << tacts.GetCountOfWorkTacts()/(countOfAccept) << endl;
 
 	cout << "\n\n----------------------------------------------\n\n";
 
