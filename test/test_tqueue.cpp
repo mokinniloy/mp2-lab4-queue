@@ -1,7 +1,8 @@
+#include "tstack.h"
 #include "tqueue.h"
-
-#include <gtest.h>
-
+#include "TProc.h"
+#include "TJobStream.h"
+#include "gtest.h"
 TEST(TQueue, can_create_queue)
 {
 	ASSERT_NO_THROW(TQueue que());
