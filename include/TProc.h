@@ -16,5 +16,5 @@ public:
 	void LoadProcessor(); // dequeue Processor queue
 	bool IsProcessorExpectationQueueFull();
 	bool IsProcessorExpectationQueueEmpty();
-	bool IsProcessorFree();
+	bool IsProcessorFree(double randomvalue);
 };

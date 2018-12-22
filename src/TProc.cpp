@@ -40,8 +40,16 @@ bool TProc::IsProcessorExpectationQueueEmpty()
 	return ProcessorExpectationQueue.IsEmpty();
 }
 
-bool TProc::IsProcessorFree()
+bool TProc::IsProcessorFree(double randomvalue)
 {
+	if (randomvalue < q2)
+	{
+		isFree = true;
+		return isFree;
+	}
+	else
+		isFree = false;
+		return isFree;
 	return isFree;
 }
 

@@ -7,7 +7,7 @@ TJobStream::TJobStream(double _q1)
 	IdentificatorOfTask = 0;
 }
 
-bool TJobStream::IsThereNewTask(int RandomValue)
+bool TJobStream::IsThereNewTask(double RandomValue)
 {
 	if (RandomValue < q1)
 	{

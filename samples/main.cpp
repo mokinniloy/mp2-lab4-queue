@@ -3,7 +3,8 @@
 //#include "TJobStream.h"
 #include "C:\Users\1\Documents\Visual Studio 2015\Projects\mp2-lab4-queue\include\TJobStream.h"
 #include "C:\Users\1\Documents\Visual Studio 2015\Projects\mp2-lab4-queue\include\TProc.h"
-#include <random>
+//#include <random>
+#include <cstdlib>
 #include <ctime>
 #include <iostream>
 using namespace std;
@@ -11,7 +12,7 @@ using namespace std;
 
 double GetRandomValue() // return random double value between 0...1
 {
-	return (double)(rand()) / RAND_MAX; 
+	return (double)(rand()) / RAND_MAX;
 }
 
 void Simulate(double _q1, double _q2, int _SizeOfQueue, int _clocks)
@@ -24,7 +25,7 @@ void Simulate(double _q1, double _q2, int _SizeOfQueue, int _clocks)
 	int QuantityOfIdleClocks = 0; // when Processor queue was empty
 	double Productivity = 1 / _q2;
 
-	
+
 	for (int i = 0; i < _clocks; i++)
 	{
 		if (jobstream.IsThereNewTask(GetRandomValue()))
@@ -38,7 +39,7 @@ void Simulate(double _q1, double _q2, int _SizeOfQueue, int _clocks)
 				QuantityOfRejections++;
 		}
 
-		if (processor.IsProcessorFree())
+		if (processor.IsProcessorFree(GetRandomValue()))
 		{
 			if (!processor.IsProcessorExpectationQueueEmpty())
 			{
@@ -49,7 +50,7 @@ void Simulate(double _q1, double _q2, int _SizeOfQueue, int _clocks)
 		}
 
 	}
-	
+
 
 	cout << "=====Results=====" << endl;
 	cout << "Initial parameters of simulation: " << endl;
@@ -66,7 +67,11 @@ void Simulate(double _q1, double _q2, int _SizeOfQueue, int _clocks)
 int main()
 {
 	srand(time(0));
-
+    /*for (int i = 0; i < 10; i++)
+    {
+        cout << GetRandomValue() << endl;
+    }
+	*/
 	Simulate(0.5, 0.5, 10, 100);
 
 	system("pause");

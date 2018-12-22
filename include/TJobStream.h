@@ -7,7 +7,7 @@ private:
 	int IdentificatorOfTask;
 public:
 	TJobStream(double _q1);
-	bool IsThereNewTask(int RandomValue);
+	bool IsThereNewTask(double RandomValue);
 	int RegisterNewTask(); // return IdentificatorOfTask
 	int GetQuantityOfAllGeneratedTasks();
 };
