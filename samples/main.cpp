@@ -1,6 +1,6 @@
 #include <iostream>
 #include <time.h>
-#include "tproc.h"
+#include "TProc.h"
 
 using namespace std;
 
