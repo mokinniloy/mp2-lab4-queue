@@ -1,7 +1,7 @@
 #ifndef __PROC_H__
 #define __PROC_H__
 
-#include "TJobstream.h"
+#include "TJobStream.h"
 
 #define DefMaxTacts 1000
 enum ProcStatus { BUSY, FREE };
