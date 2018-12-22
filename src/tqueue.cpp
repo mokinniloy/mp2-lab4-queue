@@ -16,8 +16,8 @@ int TQueue::GetNextIndex(int index)
 
 void TQueue::Put(const TData& val)
 {
-	if (IsFull()) SetRetCode(DataFull);
-	else if (pMem == 0) SetRetCode(DataNoMem);
+	if (pMem == 0) SetRetCode(DataNoMem);
+	else if (IsFull()) SetRetCode(DataFull);
 	else
 	{
 		pMem[Hi] = val;
@@ -29,8 +29,8 @@ void TQueue::Put(const TData& val)
 TData TQueue::Get()
 {
 	TData tmp = -1;
-	if (IsEmpty()) SetRetCode(DataEmpty);
-	else if (pMem == 0) SetRetCode(DataNoMem);
+	if (pMem == 0) SetRetCode(DataNoMem);
+	else if (IsEmpty()) SetRetCode(DataEmpty);
 	else
 	{
 		tmp = pMem[Li];
@@ -43,8 +43,8 @@ TData TQueue::Get()
 TData TQueue::TopElem()
 {
 	TData tmp = -1;
-	if (IsEmpty()) SetRetCode(DataEmpty);
-	else if (pMem == 0) SetRetCode(DataNoMem);
+	if (pMem == 0) SetRetCode(DataNoMem);
+	else if (IsEmpty()) SetRetCode(DataEmpty);
 	else tmp = pMem[Li];
 	return tmp;
 }
