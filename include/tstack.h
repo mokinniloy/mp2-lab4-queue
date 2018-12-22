@@ -2,13 +2,14 @@
 
 class TStack :public TDataRoot
 {
-private:
-	int top; 
+protected:
+	int Hi;  //индекс последнего элемента структуры
+	virtual int GetNextIndex(int index); //получить следующее значение индекса
 public:
     TStack(int Size = DefMemSize);
     ~TStack() {};
-	void Put(const TData &Val); 
-	TData Get();
+	void Put(const TData &Val); //положить в стек
+	TData Get(); //взять из стека с удалением
 	virtual TData TopElem(); 
 
 	int IsValid();
