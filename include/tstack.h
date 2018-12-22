@@ -7,7 +7,7 @@ protected:
 		virtual int GetNextIndex(int Index);
 public:
 		TStack(int Size = DefMemSize) : TDataRoot(Size), Hi(-1) { }
-		TStack(const TStack &)
+		TStack(const TStack &);
 		void Put(const TData &); // положить в стек
 		TData Get(); //взять из стека
 		int  IsValid();
