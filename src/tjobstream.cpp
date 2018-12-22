@@ -5,6 +5,7 @@ using namespace std;
 
 void TJobStream::TactStream()
 {
+
 	double chance = (rand() % 100 / 100.0f);
 	if (chance <= m_q1)
 	{

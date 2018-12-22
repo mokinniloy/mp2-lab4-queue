@@ -5,6 +5,7 @@ using namespace std;
 
 void TProc::ProcWork()
 {
+
 	for (int i = 0; i < m_MaxTact; i++)
 	{
 		m_JobStream.TactStream();
