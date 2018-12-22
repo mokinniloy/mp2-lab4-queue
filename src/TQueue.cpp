@@ -10,7 +10,10 @@ TData TQueue::Get()
 {
 	TData temp = -1;
 	if (pMem == nullptr) SetRetCode(DataNoMem);
-	else if (IsEmpty()) SetRetCode(DataEmpty);
+	else if (IsEmpty()) {
+		SetRetCode(DataEmpty);
+		throw "cant_get_elem_when_its_empty";
+	}
 	else {
 		temp = pMem[Li];
 		Li = GetNextIndex(Li);
