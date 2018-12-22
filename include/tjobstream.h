@@ -1,5 +1,6 @@
 #ifndef __TJOBSTREAM__
 #define __TJOBSTREAM__
+
 #include <random>
 #include <time.h>
 
