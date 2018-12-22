@@ -133,4 +133,30 @@ TEST(TQueue, print_queue)
 	ASSERT_NO_THROW(q.Print());
 }
 
+TEST(TQueue, isFull)
+{
+	TQueue q(3);
+	q.Put(1);
+	q.Put(2);
+	EXPECT_EQ(0, q.IsFull());
+}
 
+TEST(TQueue, isFull_2)
+{
+	TQueue q(3);
+	q.Put(1);
+	q.Put(2);
+	q.Put(3);
+	EXPECT_EQ(1, q.IsFull());
+}
+
+TEST(TQueue, isFull_3)
+{
+	TQueue q(3);
+	q.Put(5);
+	q.Put(5);
+	q.Put(5);
+	q.Get();
+	q.Put(6);
+	EXPECT_EQ(1, q.IsFull());
+}
