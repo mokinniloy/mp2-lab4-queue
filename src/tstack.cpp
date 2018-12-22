@@ -3,6 +3,11 @@
 
 using namespace std;
 
+int TStack::GetNextIndex(int index)
+{
+	return ++index;
+}
+
 TStack::TStack(int Size) : TDataRoot(Size)
 {
 	Hi = -1;
