@@ -1,5 +1,6 @@
 #include "../gtest/gtest.h"
-#include "../src/TQueue.h"
+//#include "../include/TQueue.h"
+#include "TQueue.h"
  
 TEST(TQueue, can_create_tqueue) {
 	ASSERT_NO_THROW(TQueue()) ;
