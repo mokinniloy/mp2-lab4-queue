@@ -2,6 +2,8 @@
 
 #include <iostream>
 
+
+
 int TQueue::GetNextIndex(int index)
 {
 	return ++index % MemSize; // "%" - остаток от деления. см очередь на кольцеом буфере
