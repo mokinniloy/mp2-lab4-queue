@@ -12,27 +12,23 @@ TEST(TQueue, cant_create_queu_with_negative_val)
 	ASSERT_ANY_THROW(TQueue a(-1));
 }
 
-TEST(TQueue, cant_create_tqueu_with_zero_val)
-{
-	ASSERT_ANY_THROW(TQueue a(0));
-}
-
 TEST(TQueue, can_add_value)
 {
 	TQueue a(1);
-	ASSERT_NO_THROW(a.Add(5));
+	ASSERT_NO_THROW(a.Put(5));
 }
 
 TEST(TQueue, can_get_value )
 {
 	TQueue a(1);
-	a.Add(5);
+	a.Put(5);
 	ASSERT_EQ(5, a.Get());
 }
 
 TEST(TQueue, cant_put_if_no_mem)
 {
 	TQueue st(0);
+
 	st.Put(5);
 
 	EXPECT_EQ(DataNoMem, st.GetRetCode());
@@ -159,7 +155,7 @@ TEST(TQueue, can_get_if_ok_circular_buffer_2)
 	EXPECT_EQ(2, k);
 }
 
-TEST(TQueue, can_top_elem_if_ok_circular_buffer_1)
+TEST(TQueue, can_top_elem_if_ok_circular_buffer)
 {
 	TQueue st(2);
 	st.Put(1);
@@ -171,13 +167,3 @@ TEST(TQueue, can_top_elem_if_ok_circular_buffer_1)
 	EXPECT_EQ(DataOK, st.GetRetCode());
 }
 
-TEST(TQueue, can_top_elem_if_ok_circular_buffer_2)
-{
-	TQueue st(2);
-	st.Put(1);
-	st.Put(2);
-	st.Get();
-	st.Put(3);
-
-	EXPECT_EQ(2, st.TopElem());
-}
