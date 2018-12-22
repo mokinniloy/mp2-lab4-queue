@@ -15,4 +15,5 @@ class TQueue :public TStack
     TData TopElem();
     void Print();
 };
+
 #endif // __T_QUEUE__
