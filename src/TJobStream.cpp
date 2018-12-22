@@ -4,7 +4,7 @@
 
 TJobStream::TJobStream(double q1 , double q2)
 {
-	if ((q1 < 0) || (q2 < 0))
+	if ((q1 < 0) || (q2 < 0) || (q1 >= 1) || (q2 >= 1))
 		throw "incorrect value";
 	boundOfExecution = q2;
 	boundOfTasks = q1;
