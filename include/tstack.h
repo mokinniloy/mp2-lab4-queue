@@ -1,16 +1,11 @@
 #include "tdataroot.h"
 
-class TStack :public TDataRoot
+class TStack : public TDataRoot
 {
-private:
-	int top; 
 public:
-    TStack(int Size = DefMemSize);
-    ~TStack() {};
-	void Put(const TData &Val); 
-	TData Get();
-	virtual TData TopElem(); 
-
-	int IsValid();
-    void Print();
+	TStack(int Size = DefMemSize) : TDataRoot(Size) {}
+	~TStack() = default;
+	void Put(const TData &Val) override;
+	TData Get() override;
+	void Print() override;
 };

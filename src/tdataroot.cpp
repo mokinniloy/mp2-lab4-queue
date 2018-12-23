@@ -40,13 +40,3 @@ void TDataRoot::SetMem(void *p, int Size) // задание памяти
   MemType = MEM_RENTER;
   MemSize = Size;
 } /*-------------------------------------------------------------------------*/
-
-bool TDataRoot::IsEmpty(void) const // контроль пустоты СД
-{
-  return DataCount == 0;
-} /*-------------------------------------------------------------------------*/
-
-bool TDataRoot::IsFull(void) const // контроль переполнения СД
-{
-  return DataCount == MemSize;
-} /*-------------------------------------------------------------------------*/
