@@ -3,10 +3,10 @@
 
 class TJobStream {
  private:
- double JobIntеns; // интенсивность потока задач
+ double JobIntIns; // ДЌГ­Е€ДєГ­Е„ДЌГўГ­Г®Е„Е€Гј ДЏГ®Е€Г®Д™Е• Г§Е•Г¤Е•Г·
  public:
- TJobStream (double Intеns);
- int GetNewJob(void); // генерация нового задания
+ TJobStream (double IntIns);
+ int GetNewJob(void); // ДѓДєГ­ДєД‘Е•Г¶ДЌЛ™ Г­Г®ГўГ®ДѓГ® Г§Е•Г¤Е•Г­ДЌЛ™
 };
 
 #endif // __TJOBSTREAM_H__
