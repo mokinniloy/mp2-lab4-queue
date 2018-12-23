@@ -52,9 +52,9 @@ void chaos(double q1, double q2, int size, int N)
 	}
 	cout << "Statistic:  " << endl;
 	cout << "All tasks:  " << all_tasks << endl;
-	cout << "Done tasks:  " << done_tasks << endl;
-	cout << "Empty tacts:  " << empty_tacts << endl;
-	cout << "Refuse:  " << refuse << endl;
+	cout << "Done tasks:  " << done_tasks <<" ("<< ((double)done_tasks / all_tasks) * 100 << "%) " << endl;
+	cout << "Empty tacts:  " << empty_tacts << " (" << ((double)empty_tacts / N) * 100 << "%) " << endl;
+	cout << "Refuse:  " << refuse << " (" << ((double)refuse / all_tasks) * 100 << "%) " << endl;
 	cout << "Middle:  " << (double)done_tasks / N << endl;
 }
 
