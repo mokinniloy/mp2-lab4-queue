@@ -1,6 +1,6 @@
 #include <iostream>
 #include "tqueue.h"
-#include "tproc.cpp"
+#include "tproc.h"
 #include "tjobstream.h"
 
 using namespace std;
