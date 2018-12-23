@@ -16,6 +16,6 @@ public:
 	TProc(int lenght);
 	bool TryToComplete();
 	void Report();
-	void CPUSim(float m1, float m2, unsigned long int tNum);
+	void CPUSim(float m1, float m2, int tNum);
 	void SetQ2(float x);
 };
