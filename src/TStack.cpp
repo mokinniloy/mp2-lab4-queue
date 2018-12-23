@@ -1,4 +1,4 @@
-#include "/../include/TStack.h"
+#include "../include/tstack.h"
 #include <iostream>
 
 void TStack::Put(const TData &val)

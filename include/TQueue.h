@@ -1,4 +1,4 @@
-#include "../include/TStack.h"
+#include "tstack.h"
 
 class TQueue : public TStack
 {
