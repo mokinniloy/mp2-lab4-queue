@@ -8,10 +8,10 @@ class  TProc : protected TJobStream
 {
 protected:
 	float q2;
-	unsigned long int tactNum; // количество тактов
-	unsigned long int completedTactNum; // количество выл=полненых команд
-	float averTuctNumToComplete; // среднее число тактов для выполнения
-	unsigned long int idleNum; // количество тактов простоя
+	int tactNum; // ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® ГІГ ГЄГІГ®Гў
+	int completedComNum; // РєРѕР»РёС‡РµСЃС‚РІРѕ РІС‹РїРѕР»РЅРµРЅС‹С… РєРѕРјР°РЅРґ
+	float averTuctNumToComplete; // Г±Г°ГҐГ¤Г­ГҐГҐ Г·ГЁГ±Г«Г® ГІГ ГЄГІГ®Гў Г¤Г«Гї ГўГ»ГЇГ®Г«Г­ГҐГ­ГЁГї
+	int idleNum; // ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® ГІГ ГЄГІГ®Гў ГЇГ°Г®Г±ГІГ®Гї
 public:
 	TProc(int lenght);
 	bool TryToComplete();
