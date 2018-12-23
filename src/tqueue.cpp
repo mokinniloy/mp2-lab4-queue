@@ -6,7 +6,7 @@
 
 int TQueue::GetNextIndex(int index)
 {
-	return ++index % MemSize; // "%" - остаток от деления. см очередь на кольцеом буфере
+	return ++index % MemSize; // "%" - Г®Г±ГІГ ГІГ®ГЄ Г®ГІ Г¤ГҐГ«ГҐГ­ГЁГї. Г±Г¬ Г®Г·ГҐГ°ГҐГ¤Гј Г­Г  ГЄГ®Г«ГјГ¶ГҐГ®Г¬ ГЎГіГґГҐГ°ГҐ
 }
 
 TData TQueue::Get()
@@ -32,9 +32,9 @@ TData TQueue::Get()
 void TQueue::Print()
 {
 	int t = DataCount;
-	for (int i = Li; i != Hi, t != 0; i = GetNextIndex(i))
+	for (int i = Li; i != Hi; i = GetNextIndex(i))
 	{
-		t--;
+		//t--;
 		std::cout << pMem[i] << " ";
 	}
 	std::cout << std::endl;
