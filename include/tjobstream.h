@@ -5,9 +5,13 @@
 class TJobStream : protected TQueue
 {
 protected:
-	float q1; // вероятность появления новой команды
-	unsigned long int failAddNum; // количество отказов
-	unsigned long int comandToDoNum;// количество поступивших команд
+	float q1; // ГўГҐГ°Г®ГїГІГ­Г®Г±ГІГј ГЇГ®ГїГўГ«ГҐГ­ГЁГї Г­Г®ГўГ®Г© ГЄГ®Г¬Г Г­Г¤Г»
+	int failAddNum; // ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г®ГІГЄГ Г§Г®Гў
+	int comandToDoNum;// ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® ГЇГ®Г±ГІГіГЇГЁГўГёГЁГµ ГЄГ®Г¬Г Г­Г¤
+	
+	std::default_random_engine generator;
+	std::uniform_real_distribution<double> distribution;
+	
 public:
 	TJobStream(int lenght);
 	bool TryToAdd(int n);
