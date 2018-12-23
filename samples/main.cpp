@@ -1,6 +1,6 @@
-#include "tjobstream.h"
-#include "tproc.h"
-#include "tqueue.h"
+#include "TJobStream.h"
+#include "TProc.h"
+#include "TQueue.h"
 #include <iostream>
 #include <iomanip>
 
