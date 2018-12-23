@@ -1,23 +1,32 @@
-#include "tjobstream.h"
-#include <iostream>
+#include "tproc.h"
 
-TJobStream::TJobStream(double _q1)
+TProc::TProc(double _q2)
 {
-	q1 = _q1;
+	q2 = _q2;
 	mt = std::mt19937(time(0));
 	rand = std::uniform_real_distribution<double>(0, 1);
+	Empty = 1;
 }
 
-bool TJobStream::IsTask()
+bool TProc::IsComplete()
 {
-	if (rand(mt) <= q1)
+	if (rand(mt) <= q2)
 		return 1;
 	else
 		return 0;
 }
 
-
-int TJobStream::GetTask()
+bool TProc::IsEmpty()
 {
-	return cnt++;
+	return Empty;
+}
+
+void TProc::Busy()
+{
+	Empty = 0;
+}
+
+void TProc::Ready()
+{
+	Empty = 1;
 }
