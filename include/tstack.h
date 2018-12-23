@@ -6,9 +6,9 @@ class TStack :public TDataRoot
 private:
 	int top; 
 public:
-    TStack(int Size = DefMemSize);
-	TStack(const TStack & a);
-	void Put(const TData &Val); 
+    TStack(int Size = DefMemSize); // Задает дефолтный размер
+	TStack(const TStack & a); 
+	void Put(const TData &Val); // метода Put
 	TData Get();
 	virtual TData TopElem();
 

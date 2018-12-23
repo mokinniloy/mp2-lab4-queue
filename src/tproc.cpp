@@ -17,7 +17,7 @@ int TProc::GetCountOfFreeTacts()
 	return tactsOfFree;
 }
 
-void TProc::BusynessOfProc(TQueue &queue)
+void TProc::BusyOfProc(TQueue &queue)
 {
 	if (queue.IsEmpty())
 		tactsOfFree++;

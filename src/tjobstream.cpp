@@ -4,10 +4,10 @@
 
 TJobStream::TJobStream(double q1 , double q2)
 {
-	if ((q1 < 0) || (q2 < 0))
+	if ( (q1 > 1)||(q2 > 1)||(q1 < 0) || (q2 < 0) )
 		throw "incorrect value";
-	boundOfExecution = q2;
-	boundOfTasks = q1;
+	boundOfTasks = q1; //велечина регулирующая интенсивность потока заданий
+	boundOfExecution = q2; //величинахарактеризующую производительность процессора
 	taskIndex = 0;
 }
 

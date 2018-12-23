@@ -19,25 +19,19 @@ int main()
 	double tasksBound;
 	double executionBound;
 
-	//----------------------------------------------------
-
 	cout << "Ввидите кол-во тактов: ";
 	cin >> countOfTacts;
 	cout << "Введите размер очереди : ";
 	cin >> sizeOfQueue;
-	cout << "Введите верхнюю границу для генерации задачи ( например 10% это 0.1 ) : ";
+	cout << "Введите верхнюю границу для интенсивности генерации задачи ( например 10% это 0.1 ) : ";
 	cin >> tasksBound;
 	cout << "Введите границу для генерации выполнения задачи ( например 10% это 0.1 ) : ";
 	cin >> executionBound;
 	cout << "\n\n----------------------------------------------\n\n";
 
-	//----------------------------------------------------
-
-	TQueue queue(sizeOfQueue);
+	TQueue queue(sizeOfQueue); //размер очереди
 	TJobStream tasks(tasksBound , executionBound);
 	TProc tacts;
-
-	//----------------------------------------------------
 
 	while ((tacts.GetCountOfFreeTacts() + tacts.GetCountOfWorkTacts()) != countOfTacts)		//имтация работы
 	{
@@ -50,7 +44,7 @@ int main()
 				queue.Put(tasks.getTaskIndex());
 		}
 
-		tacts.BusynessOfProc(queue);
+		tacts.BusyOfProc(queue);
 
 		if (!queue.IsEmpty() && tasks.taskWork() == 1)
 		{
@@ -65,11 +59,10 @@ int main()
 		queue.Get();
 	}
 	
-
 	cout << "Всего тактов: " << tacts.GetCountOfWorkTacts() + tacts.GetCountOfFreeTacts() << endl;
 	cout << "Рабочих тактов: " << tacts.GetCountOfWorkTacts() << endl;
 	cout << "Свободных тактов: " << tacts.GetCountOfFreeTacts() << endl;
-	cout << "Без тактов: " << (tacts.GetCountOfFreeTacts() * 100 /
+	cout << "Процент свободных тактов: " << (tacts.GetCountOfFreeTacts() * 100 /
 		(tacts.GetCountOfWorkTacts() + tacts.GetCountOfFreeTacts()))<< "%" << endl;
 	cout << "Среднее кол-во тактов выполненных задач: " << tacts.GetCountOfWorkTacts()/(countOfAccept) << endl;
 

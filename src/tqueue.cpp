@@ -11,7 +11,7 @@ TQueue::TQueue(int size) : TStack(size)
 		throw "error";
 }
 
-int TQueue::Get()
+int TQueue::Get() //удаляем элемент
 {
 	if (IsEmpty())
 	{
@@ -28,7 +28,7 @@ int TQueue::Get()
 	}
 }
 
-void TQueue::Put(int val)
+void TQueue::Put(int val) //добавляем элемент
 {
 	if (IsFull())
 		SetRetCode(DataFull);
