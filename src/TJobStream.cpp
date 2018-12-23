@@ -1,4 +1,4 @@
-#include "tjobstream.h"
+#include "../include/tjobstream.h"
 #include <stdexcept>
 
 TJobStream::TJobStream() : dre(time(nullptr)), urd(0.0, 1.0)

@@ -1,4 +1,4 @@
-#include "tqueue.h"
+#include "../include/tqueue.h"
 
 void TQueue::Put(const TData &val)
 {

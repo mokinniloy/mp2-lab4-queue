@@ -7,7 +7,7 @@
 //   память выделяется динамически или задается методом SetMem
 
 #include <stdio.h>
-#include "tdataroot.h"
+#include "../include/tdataroot.h"
 
 TDataRoot::TDataRoot(int Size): TDataCom()
 {
