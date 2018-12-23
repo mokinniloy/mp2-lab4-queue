@@ -1,6 +1,6 @@
 #include "tjobstream.h"
 #include <stdlib.h>
-#include <time.h>
+#include <random>
 #include <iostream>
 
 
