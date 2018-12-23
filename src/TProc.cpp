@@ -1,4 +1,4 @@
-#include "../include/tproc.h"
+#include "../include/TProc.h"
 #include <stdexcept>
 
 TProc::TProc() : urd(0.0, 1.0)
