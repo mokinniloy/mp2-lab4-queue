@@ -3,15 +3,20 @@
 #include <iterator>
 #include <algorithm>
 
-TJobStream::TJobStream(float _q1) : q1(_q1)
+TJobStream::TJobStream(float _q1, int _max_tasks) : q1(_q1)
 {
   if(_q1 < 0 || _q1 > 1)
     throw ("TJobStream::TJobStream");
 
-  for(int i = 0; i < 256; ++i)
+  for(int i = 0; i < _max_tasks; ++i)
     tasks.push_back(i);
 
   rng = std::mt19937(std::random_device()());
+}
+
+TJobStream::TJobStream(float _q1)
+  : TJobStream(_q1, 256)
+{
 }
 
 int TJobStream::get_task()
@@ -49,7 +54,7 @@ float TJobStream::get_rand_probability()
 
 int TJobStream::get_rand_index()
 {
-  std::uniform_int_distribution<int> dst(0, tasks.size());
+  std::uniform_int_distribution<int> dst(0, tasks.size() - 1);
   return dst(rng);
 }
 
