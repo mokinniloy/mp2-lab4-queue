@@ -90,7 +90,7 @@ void emulate(float q1, float q2, int n, int tacts)
       " (" << downtime  * 100.0f / tacts       << "%)\n"
     << "total tacts:              " << tacts                      << "\n\n"
 
-    << "average tacts per task:   " << (float)tacts / total_tasks << '\n'
+    << "average tacts per task:   " << (float)tacts / completed   << '\n'
     << "complete task chance:     " << q1 * 100                   << "%\n"
     << "get task chance:          " << q2 * 100                   << "%\n"
     << "queue size:               " << n                          << '\n';
