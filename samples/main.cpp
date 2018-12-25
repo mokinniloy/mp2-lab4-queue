@@ -8,6 +8,7 @@
 using namespace std;
 
 void emulate(float, float, int, int);
+int min(int a, int b);
 
 int main(int argc, const char *args[])
 {
@@ -38,7 +39,7 @@ void emulate(float q1, float q2, int n, int tacts)
   if(q1 < 0 || q1 > 1 || q2 < 0 || q2 > 1 || n < 1 || tacts < 1)
     throw ("main::emulate");
 
-  TJobStream jstream(q1, tacts);
+  TJobStream jstream(q1, min(tacts, n) + 2);
   TProc      proc(q2, n);
 
   unsigned int
@@ -90,9 +91,14 @@ void emulate(float q1, float q2, int n, int tacts)
     << "total tacts:              " << tacts                      << "\n\n"
 
     << "average tacts per task:   " << (float)tacts / total_tasks << '\n'
-    << "q1:                       " << q1 * 100                   << "%\n"
-    << "q2:                       " << q2 * 100                   << "%\n"
+    << "complete task chance:     " << q1 * 100                   << "%\n"
+    << "get task chance:          " << q2 * 100                   << "%\n"
     << "queue size:               " << n                          << '\n';
 
   flush(cout);
+}
+
+int min(int a, int b)
+{
+  return a < b ? a : b;
 }
