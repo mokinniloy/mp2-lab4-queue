@@ -7,7 +7,8 @@
 
 using namespace std;
 
-void emulate(float, float, int, size_t);
+void emulate(float, float, int, int);
+int min(int a, int b);
 
 int main(int argc, const char *args[])
 {
@@ -17,31 +18,31 @@ int main(int argc, const char *args[])
 
   switch(argc)
   {
-    case 5:
-      tacts = (size_t)atoi(args[4]);
-    case 4:
-      n = atoi(args[3]);
-    case 3:
-      q2 = atof(args[2]);
-    case 2:
-      q1 = atof(args[1]);
-      emulate(q1, q2, n, tacts);
-      return 0;
-    break;
+  case 5:
+    tacts = atoi(args[4]);
+  case 4:
+    n = atoi(args[3]);
+  case 3:
+    q2 = atof(args[2]);
+  case 2:
+    q1 = atof(args[1]);
+  break;
   }
+
+  emulate(q1, q2, n, tacts);
 
   return 0;
 }
 
-void emulate(float q1, float q2, int n, size_t tacts)
+void emulate(float q1, float q2, int n, int tacts)
 {
-  if(q1 < 0 || q1 > 1 || q2 < 0 || q2 > 1 || n < 1)
+  if(q1 < 0 || q1 > 1 || q2 < 0 || q2 > 1 || n < 1 || tacts < 1)
     throw ("main::emulate");
 
-  TJobStream jstream(q1);
+  TJobStream jstream(q1, min(tacts, n) + 2);
   TProc      proc(q2, n);
 
-  size_t
+  unsigned int
     completed = 0,
     refused   = 0,
     downtime  = 0;
@@ -49,7 +50,7 @@ void emulate(float q1, float q2, int n, size_t tacts)
     completed_id,
     task_id;
 
-  for(size_t i = 0; i < tacts; ++i)
+  for(int i = 0; i < tacts; ++i)
   {
     //получаем задачу
     task_id = jstream.get_task();
@@ -90,9 +91,14 @@ void emulate(float q1, float q2, int n, size_t tacts)
     << "total tacts:              " << tacts                      << "\n\n"
 
     << "average tacts per task:   " << (float)tacts / total_tasks << '\n'
-    << "q1:                       " << q1 * 100                   << "%\n"
-    << "q2:                       " << q2 * 100                   << "%\n"
+    << "complete task chance:     " << q1 * 100                   << "%\n"
+    << "get task chance:          " << q2 * 100                   << "%\n"
     << "queue size:               " << n                          << '\n';
 
   flush(cout);
+}
+
+int min(int a, int b)
+{
+  return a < b ? a : b;
 }

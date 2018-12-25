@@ -17,6 +17,7 @@ private:
   static std::uniform_real_distribution<float> dist_0_1;
 public:
   TJobStream(float q1);
+  TJobStream(float q1, int max_tasks);
   int get_task();
   void complete_task(int id);
 };
