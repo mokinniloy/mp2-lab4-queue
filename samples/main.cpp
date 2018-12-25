@@ -32,7 +32,7 @@ void chaos(double q1, double q2, int size, int N)
 			else 
 				queue.Put(current_task);
 		}
-		if (proc==1) {
+		if (proc==0) {
 			if (queue.IsEmpty())
 			{
 				empty_tacts++;
@@ -45,7 +45,7 @@ void chaos(double q1, double q2, int size, int N)
 				Pentium.set_busy(true);
 			}
 		}
-		if ((proc == 0)&&(!Pentium.get_busy())) 
+		if ((proc == 1)&&(!Pentium.get_busy())) 
 		{
 			done_tasks++;
 		}
