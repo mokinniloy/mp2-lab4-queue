@@ -17,15 +17,15 @@ int main(int argc, const char *args[])
 
   switch(argc)
   {
-    case 5:
-      tacts = atoi(args[4]);
-    case 4:
-      n = atoi(args[3]);
-    case 3:
-      q2 = atof(args[2]);
-    case 2:
-      q1 = atof(args[1]);
-    break;
+  case 5:
+    tacts = atoi(args[4]);
+  case 4:
+    n = atoi(args[3]);
+  case 3:
+    q2 = atof(args[2]);
+  case 2:
+    q1 = atof(args[1]);
+  break;
   }
 
   emulate(q1, q2, n, tacts);
@@ -36,7 +36,7 @@ int main(int argc, const char *args[])
 void emulate(float q1, float q2, int n, int tacts)
 {
   if(q1 < 0 || q1 > 1 || q2 < 0 || q2 > 1 || n < 1 || tacts < 1)
-    throw std::exception("main::emulate");
+    throw ("main::emulate");
 
   TJobStream jstream(q1, tacts);
   TProc      proc(q2, n);
