@@ -10,6 +10,7 @@
 #define __DATAROOT_H__
 
 #include "tdatacom.h"
+#include"tjobstream.h"
 
 #define DefMemSize   25  // размер памяти по умолчанию
 
@@ -17,9 +18,9 @@
 #define DataFull   -102  // СД переполнена
 #define DataNoMem  -103  // нет памяти
 
-typedef int    TElem;    // тип элемента СД
+typedef TJobStream TElem; // тип элемента СД
 typedef TElem* PTElem;
-typedef int    TData;    // тип значений в СД
+typedef TJobStream TData; // тип значений в СД
 
 enum TMemType { MEM_HOLDER, MEM_RENTER };
 
