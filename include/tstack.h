@@ -4,6 +4,9 @@ class TStack :public TDataRoot
 {
 private:
 	int top; 
+protected:
+	virtual int GetNextIndex(int ind);
+
 public:
     TStack(int Size = DefMemSize);
     ~TStack() {};
