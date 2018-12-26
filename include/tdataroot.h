@@ -1,4 +1,4 @@
-// ННГУ, ВМК, Курс "Методы программирования-2", С++, ООП
+﻿// ННГУ, ВМК, Курс "Методы программирования-2", С++, ООП
 //
 // tdataroot.h - Copyright (c) Гергель В.П. 28.07.2000 (06.08)
 //   Переработано для Microsoft Visual Studio 2008 Сысоевым А.В. (21.04.2015)
@@ -10,6 +10,7 @@
 #define __DATAROOT_H__
 
 #include "tdatacom.h"
+#include <stdexcept>
 
 #define DefMemSize   25  // размер памяти по умолчанию
 
@@ -23,31 +24,36 @@ typedef int    TData;    // тип значений в СД
 
 enum TMemType { MEM_HOLDER, MEM_RENTER };
 
-class TDataRoot: public TDataCom
+class TDataRoot : public TDataCom
 {
 protected:
-  PTElem pMem;      // память для СД
-  int MemSize;      // размер памяти для СД
-  int DataCount;    // количество элементов в СД
-  TMemType MemType; // режим управления памятью
+	PTElem pMem;      // память для СД
+	int MemSize;      // размер памяти для СД
+	int DataCount;    // количество элементов в СД
+	TMemType MemType; // режим управления памятью
 
-  void SetMem(void *p, int Size);             // задание памяти
+	void SetMem(void *p, int Size);
+
+
 public:
-  virtual ~TDataRoot();
-  TDataRoot(int Size = DefMemSize);
-  virtual bool IsEmpty(void) const;           // контроль пустоты СД
-  virtual bool IsFull (void) const;           // контроль переполнения СД
-  virtual void  Put   (const TData &Val) = 0; // добавить значение
-  virtual TData Get   (void)             = 0; // извлечь значение
+	virtual ~TDataRoot();
 
-  // служебные методы
-  virtual int  IsValid() = 0;                 // тестирование структуры
-  virtual void Print()   = 0;                 // печать значений
+	TDataRoot(int Size = DefMemSize);
 
-  // дружественные классы
-  friend class TMultiStack;
-  friend class TSuperMultiStack;
-  friend class TComplexMultiStack;
+
+	virtual bool IsEmpty(void) const { return DataCount == 0; }           // контроль пустоты СД
+	virtual bool IsFull(void) const { return DataCount == MemSize; }          // контроль переполнения СД
+	virtual void  Put(const TData &Val) = 0; // добавить значение
+	virtual TData Get() = 0; // извлечь значение
+
+							 // служебные методы
+							 //virtual int  IsValid() = 0;                 // тестирование структуры
+	virtual void Print() = 0;                 // печать значений
+
+											  // дружественные классы
+	friend class TMultiStack;
+	friend class TSuperMultiStack;
+	friend class TComplexMultiStack;
 };
 
 #endif

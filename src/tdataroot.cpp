@@ -7,7 +7,7 @@
 //   память выделяется динамически или задается методом SetMem
 
 #include <stdio.h>
-#include "tdataroot.h"
+#include "../include/tdataroot.h"
 
 TDataRoot::TDataRoot(int Size): TDataCom()
 {
@@ -39,14 +39,4 @@ void TDataRoot::SetMem(void *p, int Size) // задание памяти
   pMem = (TElem*) p;
   MemType = MEM_RENTER;
   MemSize = Size;
-} /*-------------------------------------------------------------------------*/
-
-bool TDataRoot::IsEmpty(void) const // контроль пустоты СД
-{
-  return DataCount == 0;
-} /*-------------------------------------------------------------------------*/
-
-bool TDataRoot::IsFull(void) const // контроль переполнения СД
-{
-  return DataCount == MemSize;
 } /*-------------------------------------------------------------------------*/
